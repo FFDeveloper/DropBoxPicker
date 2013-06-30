@@ -3,9 +3,8 @@ DropBoxPicker
 
 A simple framework to use a PickerViewController to select file from a DropBox Account.
 
-![Alt text](Pictures/Schermata1.png "Picture 1")
-
-![Alt text](Pictures/Schermata2.png "Picture 2")
+![Alt text](Pictures/Schermata1.png?raw=true "Picture 1")
+![Alt text](Pictures/Schermata2.png?raw=true "Picture 2")
 
 ## Requirements
 
@@ -86,3 +85,7 @@ You need also to change the `APP_KEY` in the "URL_Schemes" in "URL_Types" proper
 ![Alt text](Pictures/AppDelegate.png "AppDelegate.m")
 
 ![Alt text](Pictures/Demo-Info.plist.png "Demo-Info.plist")
+
+## License
+
+This code is distributed under the terms and conditions of the [MIT license](LICENSE). 
