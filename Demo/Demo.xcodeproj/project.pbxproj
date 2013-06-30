@@ -16,13 +16,14 @@
 		136D8EF217803A3D00FD503C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 136D8EF117803A3D00FD503C /* Default.png */; };
 		136D8EF417803A3D00FD503C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 136D8EF317803A3D00FD503C /* Default@2x.png */; };
 		136D8EF617803A3D00FD503C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 136D8EF517803A3D00FD503C /* Default-568h@2x.png */; };
-		136D8EF917803A3D00FD503C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 136D8EF717803A3D00FD503C /* MainStoryboard.storyboard */; };
+		136D8EF917803A3D00FD503C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 136D8EF717803A3D00FD503C /* MainStoryboard_iPhone.storyboard */; };
 		136D8EFC17803A3D00FD503C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 136D8EFB17803A3D00FD503C /* ViewController.m */; };
 		136D8F0517803BFC00FD503C /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136D8F0417803BFC00FD503C /* DropboxSDK.framework */; };
 		136D8F0B17803C6000FD503C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136D8F0A17803C6000FD503C /* QuartzCore.framework */; };
 		136D8F0D17803C6300FD503C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136D8F0C17803C6300FD503C /* Security.framework */; };
-		136D8F131780420000FD503C /* DropBoxPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136D8F121780420000FD503C /* DropBoxPicker.framework */; };
 		136D8F151780420700FD503C /* DropBoxPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 136D8F141780420700FD503C /* DropBoxPicker.bundle */; };
+		13CB955D1780A23600C4284D /* DropBoxPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CB955C1780A23600C4284D /* DropBoxPicker.framework */; };
+		13CB955F1780A29000C4284D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13CB955E1780A29000C4284D /* MainStoryboard_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,14 +40,15 @@
 		136D8EF117803A3D00FD503C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		136D8EF317803A3D00FD503C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		136D8EF517803A3D00FD503C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		136D8EF817803A3D00FD503C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		136D8EF817803A3D00FD503C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		136D8EFA17803A3D00FD503C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		136D8EFB17803A3D00FD503C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		136D8F0417803BFC00FD503C /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		136D8F0A17803C6000FD503C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		136D8F0C17803C6300FD503C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		136D8F121780420000FD503C /* DropBoxPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropBoxPicker.framework; sourceTree = "<group>"; };
 		136D8F141780420700FD503C /* DropBoxPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DropBoxPicker.bundle; sourceTree = "<group>"; };
+		13CB955C1780A23600C4284D /* DropBoxPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropBoxPicker.framework; sourceTree = "<group>"; };
+		13CB955E1780A29000C4284D /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 				136D8EE217803A3D00FD503C /* Foundation.framework in Frameworks */,
 				136D8EE417803A3D00FD503C /* CoreGraphics.framework in Frameworks */,
 				136D8F0517803BFC00FD503C /* DropboxSDK.framework in Frameworks */,
-				136D8F131780420000FD503C /* DropBoxPicker.framework in Frameworks */,
+				13CB955D1780A23600C4284D /* DropBoxPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +89,7 @@
 		136D8EDE17803A3D00FD503C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				136D8F121780420000FD503C /* DropBoxPicker.framework */,
+				13CB955C1780A23600C4284D /* DropBoxPicker.framework */,
 				136D8F0C17803C6300FD503C /* Security.framework */,
 				136D8F0A17803C6000FD503C /* QuartzCore.framework */,
 				136D8F0417803BFC00FD503C /* DropboxSDK.framework */,
@@ -104,7 +106,8 @@
 				136D8F141780420700FD503C /* DropBoxPicker.bundle */,
 				136D8EEE17803A3D00FD503C /* AppDelegate.h */,
 				136D8EEF17803A3D00FD503C /* AppDelegate.m */,
-				136D8EF717803A3D00FD503C /* MainStoryboard.storyboard */,
+				136D8EF717803A3D00FD503C /* MainStoryboard_iPhone.storyboard */,
+				13CB955E1780A29000C4284D /* MainStoryboard_iPad.storyboard */,
 				136D8EFA17803A3D00FD503C /* ViewController.h */,
 				136D8EFB17803A3D00FD503C /* ViewController.m */,
 				136D8EE617803A3D00FD503C /* Supporting Files */,
@@ -181,8 +184,9 @@
 				136D8EF217803A3D00FD503C /* Default.png in Resources */,
 				136D8EF417803A3D00FD503C /* Default@2x.png in Resources */,
 				136D8EF617803A3D00FD503C /* Default-568h@2x.png in Resources */,
-				136D8EF917803A3D00FD503C /* MainStoryboard.storyboard in Resources */,
+				136D8EF917803A3D00FD503C /* MainStoryboard_iPhone.storyboard in Resources */,
 				136D8F151780420700FD503C /* DropBoxPicker.bundle in Resources */,
+				13CB955F1780A29000C4284D /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +214,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		136D8EF717803A3D00FD503C /* MainStoryboard.storyboard */ = {
+		136D8EF717803A3D00FD503C /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				136D8EF817803A3D00FD503C /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,7 +293,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Demo;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -306,7 +310,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Demo;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

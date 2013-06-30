@@ -30,7 +30,7 @@
 {
     if (![[DBSession sharedSession] isLinked])
     {
-        [[[UIAlertView alloc] initWithTitle:@"Attenzione" message:@"Prima di invoare il picker devi essere connesso a dropbox" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Before to use the picker, you have to be connected to dropbox" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }else {
         DBPDropBoxPickerViewController *picker = [[DBPDropBoxPickerViewController alloc] initWithDropBoxPath:@"/"];
         picker.delegate = self;
@@ -50,6 +50,17 @@
 - (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker
 {
     NSLog(@"Error choosing file");
+    [[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+        
+    }];
+}
+
+- (void)canceledOperation:(DBPDropBoxPickerViewController *)picker
+{
+    NSLog(@"Canceled operation");
+    [[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+        
+    }];
 }
 
 - (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath

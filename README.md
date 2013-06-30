@@ -7,6 +7,10 @@ A simple framework to use a PickerViewController to select file from a DropBox A
 <img src="Pictures/Schermata1.png" alt="Picture 1" width="200"/> &nbsp; <img src="Pictures/Schermata2.png" alt="Picture 2" width="200"/>
 </p>
 </center>
+<p align="center">
+<img src="Pictures/Schermata3.png" alt="Picture 3" width="420"/>
+</p>
+</center>
 
 ## Requirements
 
@@ -60,23 +64,32 @@ For the other configurations look at the DropBox Core API SDK Getting Started Gu
 
 	for the root path.
 
-4. You need also to implement the two methods of the `DBPDropBoxPickerDelegate`:
+4. You need also to implement the three methods of the `DBPDropBoxPickerDelegate`:
 
 		- (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker
 		{
 			NSLog(@"Error choosing file");
 		}
+		
+		- (void)canceledOperation:(DBPDropBoxPickerViewController *)picker
+		{
+			NSLog(@"Canceled operation");
+			[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+			
+			}];
+		}
 
 		- (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath
 		{
 			NSLog(@"File choosed with path %@", dropBoxPath);
-    		[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
-        
-    		}];
+			[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+			
+			}];
 		}
 
 	The first method, `errorChoosingFile:`, is called if there was an error with dropbox connection (meaby the application is not linked with the account).  
-	The second one, `dropBoxPickerController: fileChoosedWithPath:`, is called when the user choose a file with the given dropBoxPath.  
+	The second one, `canceledOperation:`, is called when the user tap the cancel button and close the picker.  
+	At last, the third one, `dropBoxPickerController: fileChoosedWithPath:`, is called when the user choose a file with the given dropBoxPath.  
 	Then, you can use this path to download the file with the DropBoxSDK.
 
 ## The Demo Project

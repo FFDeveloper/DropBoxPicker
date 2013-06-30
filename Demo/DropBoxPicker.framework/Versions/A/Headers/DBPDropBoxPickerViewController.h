@@ -16,6 +16,7 @@
 @required
 - (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath;
 - (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker;
+- (void)canceledOperation:(DBPDropBoxPickerViewController *)picker;
 
 @end
 
