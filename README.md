@@ -28,8 +28,8 @@ Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxP
 
 1. Ensure that your application is still linked with DropBox:
 
-  	if (![[DBSession sharedSession] isLinked])
-			[[DBSession sharedSession] linkFromController:self];
+  		if (![[DBSession sharedSession] isLinked])
+				[[DBSession sharedSession] linkFromController:self];
 
 2. The class that want to start the picker needs to implement the `DBPDropBoxPickerDelegate` like this:
 
