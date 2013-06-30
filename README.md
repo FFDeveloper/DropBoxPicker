@@ -69,6 +69,9 @@ For the other configurations look at the DropBox Core API SDK Getting Started Gu
 		- (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker
 		{
 			NSLog(@"Error choosing file");
+			[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+			
+			}];
 		}
 		
 		- (void)canceledOperation:(DBPDropBoxPickerViewController *)picker
