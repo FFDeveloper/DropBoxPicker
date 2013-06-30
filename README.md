@@ -12,6 +12,8 @@ It depends on the following Apple frameworks, which should already be included w
 `Foundation.framework`  
 `UIKit.framework`  
 `CoreGraphics.framework`  
+`Security.framework`
+`QuartzCore.framework`
 
 You will need also to add `DropBoxSDK.framework`. This is the DropBox Core API SDK for ios.  
 
@@ -23,6 +25,8 @@ Download the latest code version or add the repository as a git submodule to you
 Open your project in Xcode, then drag and drop `DropBoxPicker.framework` onto your project in the Frameworks directory. You will need also to drag and drop the `DropBoxPicker.bundle` onto your project in the main bundle.
 
 Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxPicker.h>`.
+
+For the other configurations look at the DropBox Core API SDK Getting Started Guide.
 
 ##Usage
 
@@ -51,7 +55,7 @@ Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxP
 
 	for the root path.
 
-4. You have also to implement the two methods of the `DBPDropBoxPickerDelegate`:
+4. You need also to implement the two methods of the `DBPDropBoxPickerDelegate`:
 
 		- (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker
 		{
@@ -60,7 +64,7 @@ Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxP
 
 		- (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath
 		{
-			NSLog(@"File choosed with path %@",dropBoxPath);
+			NSLog(@"File choosed with path %@", dropBoxPath);
     		[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
         
     		}];
@@ -70,6 +74,9 @@ Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxP
 	The second one, `dropBoxPickerController: fileChoosedWithPath:`, is called when the user choose a file with the given dropBoxPath.  
 	Then, you can use this path to download the file with the DropBoxSDK.
 
-
+## The Demo Project
 Take a look at the bundled demo project to see a very simple example.  
-You have to change the `APP_KEY` and the `APP_SECRET` in the AppDelegate with yours.
+You have to change the `APP_KEY` and the `APP_SECRET` in the AppDelegate with yours.  
+You need also to change the `APP_KEY` in the URL_ Schemes in URL_ Types property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, abcde12345, you have to put db-abcde12345 (see the picture below).
+
+![Alt text](Demo-Info.plist.png "Demo-Info.plist")
