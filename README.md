@@ -3,10 +3,10 @@ DropBoxPicker
 
 A simple framework to use a PickerViewController to select file from a DropBox Account.
 
-<p>
-<img src="Pictures/Schermata1.png" alt="Picture 1" width="200"/>
-<img src="Pictures/Schermata2.png" alt="Picture 2" width="200"/>
+<p align="center">
+<img src="Pictures/Schermata1.png" alt="Picture 1" width="200"/> &nbsp; <img src="Pictures/Schermata2.png" alt="Picture 2" width="200"/>
 </p>
+</center>
 
 ## Requirements
 
