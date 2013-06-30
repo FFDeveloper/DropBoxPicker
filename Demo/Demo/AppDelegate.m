@@ -13,10 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     DBSession* dbSession = [[DBSession alloc] initWithAppKey:@"APP_KEY" appSecret:@"APP_SECRET" root:kDBRootDropbox];
-    
-    //invocazione del metodo setSharedSession con parametro dbSession dell'oggetto db session? è un metodo statico?
     [DBSession setSharedSession:dbSession];
     return YES;
 }

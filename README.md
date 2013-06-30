@@ -1,7 +1,11 @@
 DropBoxPicker
 =============
 
-A simple framework to use a PickerViewController to select file from a DropBox Account
+A simple framework to use a PickerViewController to select file from a DropBox Account.
+
+![Alt text](Pictures/Schermata1.png "Picture 1")
+
+![Alt text](Pictures/Schermata2.png "Picture 2")
 
 ## Requirements
 
@@ -77,6 +81,8 @@ For the other configurations look at the DropBox Core API SDK Getting Started Gu
 ## The Demo Project
 Take a look at the bundled demo project to see a very simple example.  
 You have to change the `APP_KEY` and the `APP_SECRET` in the AppDelegate with yours.  
-You need also to change the `APP_KEY` in the "URL_Schemes" in "URL_Types" property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, "abcde12345", you have to put "db-abcde12345" (see the picture below).
+You need also to change the `APP_KEY` in the "URL_Schemes" in "URL_Types" property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, "abcde12345" and your `SECRET_KEY` is "fghi6789" you have to change the Demo Project like the pictures below).
 
-![Alt text](Demo-Info.plist.png "Demo-Info.plist")
+![Alt text](Pictures/AppDelegate.png "AppDelegate.m")
+
+![Alt text](Pictures/Demo-Info.plist.png "Demo-Info.plist")
