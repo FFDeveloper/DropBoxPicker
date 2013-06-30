@@ -12,7 +12,7 @@ It depends on the following Apple frameworks, which should already be included w
 `Foundation.framework`  
 `UIKit.framework`  
 `CoreGraphics.framework`  
-`Security.framework`
+`Security.framework`  
 `QuartzCore.framework`
 
 You will need also to add `DropBoxSDK.framework`. This is the DropBox Core API SDK for ios.  
@@ -77,6 +77,6 @@ For the other configurations look at the DropBox Core API SDK Getting Started Gu
 ## The Demo Project
 Take a look at the bundled demo project to see a very simple example.  
 You have to change the `APP_KEY` and the `APP_SECRET` in the AppDelegate with yours.  
-You need also to change the `APP_KEY` in the URL_ Schemes in URL_ Types property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, abcde12345, you have to put db-abcde12345 (see the picture below).
+You need also to change the `APP_KEY` in the "URL_Schemes" in "URL_Types" property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, "abcde12345", you have to put "db-abcde12345" (see the picture below).
 
 ![Alt text](Demo-Info.plist.png "Demo-Info.plist")
