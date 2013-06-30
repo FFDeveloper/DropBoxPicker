@@ -61,9 +61,9 @@ Include DropBoxPicker wherever you need it with `#import <DropBoxPicker/DropBoxP
 		- (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath
 		{
 			NSLog(@"File choosed with path %@",dropBoxPath);
-    			[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+    		[[picker navigationController] dismissViewControllerAnimated:NO completion:^{
         
-    			}];
+    		}];
 		}
 
 	The first method, `errorChoosingFile:`, is called if there was an error with dropbox connection (meaby the application is not linked with the account).  
