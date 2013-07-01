@@ -4,11 +4,11 @@ DropBoxPicker
 A simple framework to use a PickerViewController to select file from a DropBox Account.
 
 <p align="center">
-<img src="Pictures/Schermata1.png" alt="Picture 1" width="200"/> &nbsp; <img src="Pictures/Schermata2.png" alt="Picture 2" width="200"/>
+<img src="https://github.com/TheLOTR/DropBoxPicker/raw/master/Pictures/Schermata1.png" alt="Picture 1" width="200"/> &nbsp; <img src="https://github.com/TheLOTR/DropBoxPicker/raw/master/Pictures/Schermata2.png" alt="Picture 2" width="200"/>
 </p>
 </center>
 <p align="center">
-<img src="Pictures/Schermata3.png" alt="Picture 3" width="420"/>
+<img src="https://github.com/TheLOTR/DropBoxPicker/raw/master/Pictures/Schermata3.png" alt="Picture 3" width="420"/>
 </p>
 </center>
 
@@ -100,9 +100,9 @@ Take a look at the bundled demo project to see a very simple example.
 You have to change the `APP_KEY` and the `APP_SECRET` in the AppDelegate with yours.  
 You need also to change the `APP_KEY` in the "URL_Schemes" in "URL_Types" property in the `Demo_Info.plist` file. If your `APP_KEY` is, for example, "abcde12345" and your `SECRET_KEY` is "fghi6789" you have to change the Demo Project like the pictures below).
 
-![Alt text](Pictures/AppDelegate.png "AppDelegate.m")
+![Alt text](https://github.com/TheLOTR/DropBoxPicker/raw/master/Pictures/AppDelegate.png "AppDelegate.m")
 
-![Alt text](Pictures/Demo-Info.plist.png "Demo-Info.plist")
+![Alt text](https://github.com/TheLOTR/DropBoxPicker/raw/master/Pictures/Demo-Info.plist.png "Demo-Info.plist")
 
 ## License
 
