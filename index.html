@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Dropboxpicker by TheLOTR</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Dropboxpicker</h1>
+        <h2>A simple framework to use a PickerViewController to select file from a DropBox Account</h2>
+        <a href="https://github.com/TheLOTR/DropBoxPicker" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="dropboxpicker" class="anchor" href="#dropboxpicker"><span class="octicon octicon-link"></span></a>DropBoxPicker</h1>
+
+<p>A simple framework to use a PickerViewController to select file from a DropBox Account.</p>
+
+<p align="center">
+<img src="Pictures/Schermata1.png" alt="Picture 1" width="200">   <img src="Pictures/Schermata2.png" alt="Picture 2" width="200"></p>
+
+<p></p>
+
+<p align="center">
+<img src="Pictures/Schermata3.png" alt="Picture 3" width="420"></p>
+
+<p></p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>DropBoxPicker works on any iOS version and is compatible with only ARC projects.  </p>
+
+<p>It depends on the following Apple frameworks, which should already be included with most Xcode templates:  </p>
+
+<p><code>Foundation.framework</code><br><code>UIKit.framework</code><br><code>CoreGraphics.framework</code><br><code>Security.framework</code><br><code>QuartzCore.framework</code></p>
+
+<p>You will need also to add <code>DropBoxSDK.framework</code>. This is the DropBox Core API SDK for ios.  </p>
+
+<h2>
+<a name="adding-dropboxpicker-to-your-project" class="anchor" href="#adding-dropboxpicker-to-your-project"><span class="octicon octicon-link"></span></a>Adding DropBoxPicker to your project</h2>
+
+<p>You can add DropBoxPicker as a framework to your project or workspace.</p>
+
+<p>Download the latest code version or add the repository as a git submodule to your git-tracked project.<br>
+Open your project in Xcode, then drag and drop <code>DropBoxPicker.framework</code> onto your project in the Frameworks directory. You will need also to drag and drop the <code>DropBoxPicker.bundle</code> onto your project in the main bundle.</p>
+
+<p>Include DropBoxPicker wherever you need it with <code>#import &lt;DropBoxPicker/DropBoxPicker.h&gt;</code>.</p>
+
+<p>For the other configurations look at the DropBox Core API SDK Getting Started Guide.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>
+<p>Ensure that your application is still linked with DropBox:</p>
+
+<pre><code>if (![[DBSession sharedSession] isLinked])
+        [[DBSession sharedSession] linkFromController:self];
+</code></pre>
+</li>
+<li>
+<p>The class that want to start the picker needs to implement the <code>DBPDropBoxPickerDelegate</code> like this:</p>
+
+<pre><code>@interface ViewController : UIViewController &lt;DBPDropBoxPickerDelegate&gt;
+</code></pre>
+</li>
+<li>
+<p>To call the picker you have to use the following code:</p>
+
+<pre><code>DBPDropBoxPickerViewController *picker = [[DBPDropBoxPickerViewController alloc] initWithDropBoxPath:ROOT_PATH];
+picker.delegate = self;
+UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:picker];
+[self presentViewController:navController animated:YES completion:^{
+
+}];
+</code></pre>
+
+<p><code>ROOT_PATH</code> here, is a NSString that represent the dropbox path for the picker. When it starts, it is opened at this path.<br>
+You can use  </p>
+
+<pre><code>[[DBPDropBoxPickerViewController alloc] initWithDropBoxPath:@"/"]  
+</code></pre>
+
+<p>for the root path.</p>
+</li>
+<li>
+<p>You need also to implement the three methods of the <code>DBPDropBoxPickerDelegate</code>:</p>
+
+<pre><code>- (void)errorChoosingFile:(DBPDropBoxPickerViewController *)picker
+{
+    NSLog(@"Error choosing file");
+    [[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+
+    }];
+}
+
+- (void)canceledOperation:(DBPDropBoxPickerViewController *)picker
+{
+    NSLog(@"Canceled operation");
+    [[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+
+    }];
+}
+
+- (void)dropBoxPickerController:(DBPDropBoxPickerViewController *)picker fileChoosedWithPath:(NSString *)dropBoxPath
+{
+    NSLog(@"File choosed with path %@", dropBoxPath);
+    [[picker navigationController] dismissViewControllerAnimated:NO completion:^{
+
+    }];
+}
+</code></pre>
+
+<p>The first method, <code>errorChoosingFile:</code>, is called if there was an error with dropbox connection (meaby the application is not linked with the account).<br>
+The second one, <code>canceledOperation:</code>, is called when the user tap the cancel button and close the picker.<br>
+At last, the third one, <code>dropBoxPickerController: fileChoosedWithPath:</code>, is called when the user choose a file with the given dropBoxPath.<br>
+Then, you can use this path to download the file with the DropBoxSDK.</p>
+</li>
+</ol><h2>
+<a name="the-demo-project" class="anchor" href="#the-demo-project"><span class="octicon octicon-link"></span></a>The Demo Project</h2>
+
+<p>Take a look at the bundled demo project to see a very simple example.<br>
+You have to change the <code>APP_KEY</code> and the <code>APP_SECRET</code> in the AppDelegate with yours.<br>
+You need also to change the <code>APP_KEY</code> in the "URL_Schemes" in "URL_Types" property in the <code>Demo_Info.plist</code> file. If your <code>APP_KEY</code> is, for example, "abcde12345" and your <code>SECRET_KEY</code> is "fghi6789" you have to change the Demo Project like the pictures below).</p>
+
+<p><img src="Pictures/AppDelegate.png" alt="Alt text" title="AppDelegate.m"></p>
+
+<p><img src="Pictures/Demo-Info.plist.png" alt="Alt text" title="Demo-Info.plist"></p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This code is distributed under the terms and conditions of the <a href="LICENSE">MIT license</a>. </p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/TheLOTR/DropBoxPicker/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/TheLOTR/DropBoxPicker/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/TheLOTR/DropBoxPicker"></a> is maintained by <a href="https://github.com/TheLOTR">TheLOTR</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
